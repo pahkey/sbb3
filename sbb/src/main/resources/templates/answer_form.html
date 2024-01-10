@@ -1,13 +1,9 @@
 <html layout:decorate="~{layout}">
 <div layout:fragment="content" class="container">
-	<h5 class="my-3 border-bottom pb-2">질문등록</h5>
-	<form th:object="${questionForm}" method="post">
+	<h5 class="my-3 border-bottom pb-2">답변 수정</h5>
+	<form th:object="${answerForm}" method="post">
 		<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 		<div th:replace="~{form_errors :: formErrorsFragment}"></div>
-		<div class="mb-3">
-			<label for="subject" class="form-label">제목</label>
-			<input type="text" th:field="*{subject}" class="form-control">
-		</div>
 		<div class="mb-3">
 			<label for="content" class="form-label">내용</label>
 			<textarea th:field="*{content}" class="form-control" rows="10"></textarea>
